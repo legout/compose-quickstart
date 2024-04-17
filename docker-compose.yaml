@@ -2,15 +2,15 @@ version: '3'
 services:
   magic:
     image: mageai/mageai:latest
-    command: mage start ${PROJECT_NAME}
-    env_file:
-      - .env
+    command: mage start base_project
+    #env_file:
+    #  - .env
     build:
       context: .
       dockerfile: Dockerfile
     environment:
-      USER_CODE_PATH: /home/src/${PROJECT_NAME}
-      ENV: ${ENV}
+      USER_CODE_PATH: /home/src/base_project
+    #  ENV: ${ENV}
     ports:
       - 6789:6789
     volumes:
